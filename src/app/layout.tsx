@@ -1,5 +1,4 @@
 import '../css/globals.css'
-import { Metadata } from 'next'
 import { Kanit } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
 import Header from '@/components/header/Header'
