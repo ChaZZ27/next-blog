@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from 'next/image'
 import image from '../assets/blog.jpg'
 
-const metadata = {
+export const metadata = {
   title: {
     default: 'React Blog',
     template: '%s | React Blog'
