@@ -1,7 +1,20 @@
+import { Metadata } from 'next'
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from "react";
 import { dataURL, fetchData } from '@/lib/fetchData';
+
+export async function generateMetadata(
+  { params }: ArticleMetadata
+): Promise<Metadata> {
+
+  const id = params.id
+  const article = await fetch(`${dataURL}/${id}`).then((res) => res.json())
+ 
+  return {
+    title: article.title
+  }
+}
 
 const PostPage = async ({params: { id }}: { params: { id: string}})  => {
   

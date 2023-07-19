@@ -10,6 +10,10 @@ type PostPageProps = {
     }
 }
 
+type ArticleMetadata = {
+    params: { id: string }
+}
+
 type PostType = {
     id: number,
     title: string,

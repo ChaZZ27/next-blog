@@ -6,14 +6,6 @@ import Main from '@/components/main/Main'
 
 const kanit = Kanit({ weight: ['400', '600'], subsets: ['latin', 'latin-ext'] })
 
-export const metadata = {
-  title: {
-    default: 'React Blog',
-    template: '%s | React Blog'
-  },
-  description: 'Portfolio project created with Next.js',
-}
-
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">

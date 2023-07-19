@@ -1,6 +1,6 @@
 "use client"
 
-import { metadata } from '@/app/layout';
+import { metadata } from '@/app/page';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Nav from '../nav/Nav';

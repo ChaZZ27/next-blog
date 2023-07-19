@@ -2,6 +2,14 @@ import Link from "next/link";
 import Image from 'next/image'
 import image from '../assets/blog.jpg'
 
+export const metadata = {
+  title: {
+    default: 'React Blog',
+    template: '%s | React Blog'
+  },
+  description: 'Portfolio project created with Next.js',
+}
+
 const App = () => {
 
   return (
