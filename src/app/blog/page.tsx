@@ -6,19 +6,20 @@ import Loader from '@/components/helpers/Loader';
 import { useState, useEffect } from "react";
 
 const Blog = () => {
-  const [limit, setLimit] = useState(10);
+  
+  let LIMIT = 10;
+  const [skip, setSkip] = useState(10);
   const [posts, setPosts] = useState<PostType[]>([])
-  const [total, setTotal] = useState(limit)
+  const [total, setTotal] = useState(LIMIT)
   const [loading, setLoading] = useState(true);
+  let fetchURL = `${dataURL}?limit=${LIMIT}`;
 
-  const loadMoreHandler = async () => {
+  const initialFetch = async () => {
     try {
-      let fetchURL = `${dataURL}?limit=${limit}`;
-      const {posts, total} = await fetchData(`${dataURL}?limit=${limit}`)  
+      const {posts, total} = await fetchData(fetchURL)  
 
       setPosts(posts);
-      setLimit(limit+10);
-      setTotal(total);
+      setTotal(total);      
       setLoading(false)
     } catch (error) {
       console.error(error)
@@ -27,8 +28,21 @@ const Blog = () => {
     }
   }
 
+  const loadMoreHandler = async () => {
+    try {
+      const {posts: newPosts} = await fetchData(fetchURL+`&skip=${skip}`)  
+      const newSkip = skip + 10;
+
+      setPosts((prevPosts) => [...prevPosts, ...newPosts]);
+      setSkip(newSkip)
+      
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   useEffect(() => {
-    loadMoreHandler()
+    initialFetch()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
@@ -43,7 +57,7 @@ const Blog = () => {
             <Post key={item.id} {...item} customClass={'w-full my-6'} />
           )}
         </div>
-        {total !== limit && loadMoreButton}
+        {posts.length !== total && loadMoreButton}
   </section>
   
 }

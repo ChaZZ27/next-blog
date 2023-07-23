@@ -35,9 +35,9 @@ const PostPage = async ({params: { id }}: { params: { id: string}})  => {
           <p className='text-sm'><strong>Tags:</strong> {data.tags?.join(", ")}</p>
           <p className='text-lg'>&#128077; {data.reactions}</p>
         </div>
-        <div className='flex flex-col sm:flex-row flex-wrap items-center justify-between gap-y-2'>
-          {data.id > 1 && <Link href={`/blog/${Number(id) - 1}`} className='inline-block px-4 py-2 font-semibold text-md bg-slate-800 text-white rounded-full shadow-sm hover:bg-slate-600 hover:shadow-md'>&larr; Previous post</Link>}
-          {data.id < total && <Link href={`/blog/${Number(id) + 1}`} className='inline-block px-4 py-2 font-semibold text-md bg-slate-800 text-white rounded-full shadow-sm hover:bg-slate-600 hover:shadow-md'>Next post &rarr;</Link>}
+        <div className='flex flex-col sm:flex-row flex-wrap items-center gap-x-2 gap-y-2'>
+          {data.id > 1 && <Link href={`/blog/${Number(id) - 1}`} className='inline-block px-4 py-2 sm:mr-auto sm:ml-0 font-semibold text-md bg-slate-800 text-white rounded-full shadow-sm hover:bg-slate-600 hover:shadow-md'>&larr; Previous post</Link>}
+          {data.id < total && <Link href={`/blog/${Number(id) + 1}`} className='inline-block px-4 py-2 sm:ml-auto sm:mr-0 font-semibold text-md bg-slate-800 text-white rounded-full shadow-sm hover:bg-slate-600 hover:shadow-md'>Next post &rarr;</Link>}
         </div>
       </section>
     </Suspense>
