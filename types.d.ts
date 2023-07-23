@@ -44,11 +44,3 @@ type Breadcrumb = {
 interface BreadcrumbsList {
     items: Breadcrub[]
 }
-
-// button
-type ButtonLoadMore = {
-    children: React.ReactNode;
-    className?: string;
-    loadMoreHandler?: () => void
-
-}
