@@ -13,7 +13,7 @@ export const metadata = {
 const App = () => {
 
   return (
-    <div className='container mx-auto px-4' data-testid="test-app">
+    <div className='container mx-auto px-4'>
           <div className='grid gap-10 grid-cols-1'>
             <div className="relative h-80">
               <Image src={image} className="object-cover" fill={true} alt="Photo by Andrew Neel on Unsplash" />

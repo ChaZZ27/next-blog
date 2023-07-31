@@ -1,9 +1,9 @@
 import React from 'react'
-import { useSelectedLayoutSegments  } from 'next/navigation'
+import { useSelectedLayoutSegments } from 'next/navigation'
 import Link from 'next/link';
 
 const Breadcrumbs = () => {
-  const segments = useSelectedLayoutSegments()
+  const segments = useSelectedLayoutSegments()  
 
   return <div className='breadcrumbs border-b-2'>
     <div className='container mx-auto'>
