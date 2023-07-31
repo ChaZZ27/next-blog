@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from "react";
 import { dataURL, fetchData } from '@/lib/fetchData';
+import Loader from '@/components/helpers/Loader';
 
 export async function generateMetadata(
   { params }: ArticleMetadata
@@ -18,13 +19,12 @@ export async function generateMetadata(
 
 const PostPage = async ({params: { id }}: { params: { id: string}})  => {
   
-  const fallback = <div className='flex items-center justify-center'>Loading...</div>
   const data = await fetchData(`${dataURL}/${id}`)
   const postImageUrl = `https://picsum.photos/id/${id}/1500/400.jpg`;  
     
   const {total} = await fetchData(`${dataURL}`)
   
-  return <Suspense fallback={fallback}>
+  return <Suspense fallback={<Loader />}>
       <section className='container mx-auto px-4'>
         <div className='relative h-96'>
           <Image src={postImageUrl} className='object-cover' fill={true} alt="Post title" />
