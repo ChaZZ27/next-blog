@@ -1,14 +1,18 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
- Next.js Blog application.
+Next.js Blog application.
 
-Tech stack: 
-- Next.js, 
-- React.js (hooks), 
-- TailwindCSS, 
-- Typescript,
-- Jest,
-- React Testing Library
+Tech stack:
+
+-   Next.js,
+-   React.js (hooks),
+-   TailwindCSS,
+-   Typescript,
+-   Cypress (component/e2e testing)
+
+## LIVE PREVIEW
+
+You can preview it here: https://next-blog-ajourzm4z-chazz27.vercel.app/
 
 ## Getting Started
 
